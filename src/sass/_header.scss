@@ -55,6 +55,9 @@ $nav_link_x_pad: 4px;
 
 .nav-btn {
 	display: none;
+	&:focus {
+		outline: none;
+	}
 }
 
 $page_heading_col: $green;

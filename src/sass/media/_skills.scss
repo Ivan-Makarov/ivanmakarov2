@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
 	.skills-list {
 		&__item {
 			width: 33.3%;
@@ -6,7 +6,7 @@
 	}		
 }
 
-@media screen and (max-width: 780px) {
+@media (max-width: 780px) {
 	.skills-list {
 		&__item {
 			width: 50%;
@@ -14,7 +14,7 @@
 	}		
 }
 
-@media screen and (max-width: 580px) {
+@media (max-width: 580px) {
 	.skills-list {
 		&__item {
 			width: 100%;

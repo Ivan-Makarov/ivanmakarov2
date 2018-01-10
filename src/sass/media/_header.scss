@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
 	.header {
 		&__content {
 			position: relative;
@@ -46,7 +46,7 @@
 	}
 }
 
-@media screen and (max-width: 370px) {
+@media (max-width: 370px) {
 	.page-heading {
 		align-self: center;
 		font-size: 12px;

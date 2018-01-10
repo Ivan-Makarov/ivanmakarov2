@@ -58,7 +58,7 @@ gulp.task('css', () => {
         .on('error', sass.logError)
         .pipe(postCss([
             autoprefixer(),
-            mqpacker()
+			mqpacker()
         ]))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./build/css'))

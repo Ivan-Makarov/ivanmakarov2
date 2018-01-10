@@ -1,10 +1,10 @@
-@media screen and (max-width: 1150px) {
+@media (max-width: 1150px) {
 	.content {
 		width: 95%;
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
 	.about {
 		&__container {
 			flex-direction: column-reverse;

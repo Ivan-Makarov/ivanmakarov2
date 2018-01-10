@@ -1,4 +1,4 @@
-@media screen and (min-width: 651px) and (max-width: 850px) {
+@media (min-width: 651px) and (max-width: 850px) {
 	.portfolio-list {
 		&__item {
 			width: 33.3%;
@@ -6,7 +6,7 @@
 	}
 }
 
-@media screen and (min-width: 451px) and (max-width: 650px) {
+@media (min-width: 451px) and (max-width: 650px) {
 	.portfolio-list {
 		&__item {
 			width: 50%;
@@ -14,7 +14,7 @@
 	}
 }
 
-@media screen and (max-width: 450px) {
+@media (max-width: 450px) {
 	.portfolio-list {
 		&__item {
 			width: 100%;
