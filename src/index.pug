@@ -1,0 +1,158 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		title
+		link(rel="stylesheet" href="/css/main.min.css")
+		script(src="/js/jquery.min.js")
+		script(src="/js/jquery.scrollto.min.js")
+		script(src="/js/main.min.js" defer)
+	body.body
+		header.header
+			.content.container-flex.container-flex_sb.header__content
+				h1.page-heading Иван Макаров &mdash; веб-разработчик
+
+				nav.nav
+					ul.nav__list
+						each section in mainSections
+							li.nav__list-item
+								a.nav__link(href=`#${section.en}`)= section.ru
+				
+		main.main
+			section.main-section#about
+				.content
+					h2.main-section__heading= mainSections[0].ru						
+					.container-flex.container-flex_sb
+						.container.container_f1
+							each p in about
+								p.text !{p}
+						.img-container.my-photo
+							img.img-container__img(src=`${assets.imgs.myPhoto}`)
+
+					
+			section.main-section#skills
+				.content
+					h2.main-section__heading= mainSections[1].ru
+					ul.skills-list.container-flex
+						each skill in skills
+							li.skills-list__item
+								article.skill
+									h3.skill__title= skill.title
+									.skill-bar
+										.skill-bar__rate(
+											style=`width: ${100 - skill.level}%;`
+										)
+									p.text !{skill.description.ru}
+					.container-flex.container-flex_center
+						a.btn.section__btn(href="#contacts") Контакты
+
+			section.main-section#cv
+				.content
+					h2.main-section__heading= mainSections[2].ru
+					a.btn.main-section__btn(href=`${assets.docs.cv}` download) Скачать pdf
+					section.cv
+						h3.cv__heading Образование
+						ul.cv__list.container-flex
+							each item in education
+								li.cv__list-item
+									mixin edItem(item) 
+										if !item.link
+											h4.cv-article__heading !{item.title}
+										else
+											h4.cv-article__heading
+												a.cv-article__link(href=`${item.link}`)  !{item.title}
+										p.text.cv-article__details !{item.place}, !{item.time}
+										if item.skills
+											h5.article__subheading Ключевые навыки
+											ul.cv-article__list
+												each skill in item.skills
+													li.cv-article__list-item !{skill}
+									
+									if item.lessRelevant
+										article(class=`cv-article ed-item ed-item_less-relevant`)
+											+edItem(item)
+									else
+										article(class=`cv-article ed-item`)
+											+edItem(item)
+												
+					section.cv
+						h3.cv__heading Опыт
+						ul.cv__list.container-flex.container-flex_grid
+							each item in experience
+								li.cv__list-item.container-flex__grid-item
+									article.cv-article.exp-item
+										h4.cv-article__heading !{item.title}
+										if !item.link
+											p.text.cv-article__details !{item.place}, !{item.time}
+										else
+											p.text.cv-article__details
+												a.cv-article__link(href=`${item.link}`)= item.place
+												| , !{item.time}
+										if item.responsibilities		
+											h5.article__subheading Основные обязанности
+											ul.cv-article__list
+												each resp in item.responsibilities
+													li.cv-article__list-item= resp
+				
+			section.main-section#portfolio
+				.content
+					h2.main-section__heading= mainSections[3].ru
+					ul.portfolio-list.container-flex
+						each item in portfolio
+							li.portfolio-list__item
+								article.portfolio-item.container-flex.container-flex_col.container-flex_sb
+										.container
+											h3.portfolio-item__heading !{item.title}
+											p.text !{item.description}
+											if item.links
+												.container-flex.container-flex_center
+													.container-flex
+														if item.links.source
+															a.btn.portfolio-item__link(href=`${item.links.source}`) source
+														if item.links.view
+															a.btn.portfolio-item__link(href=`${item.links.view}`) view	
+										.container
+											h4.article__subheading технологии
+											ul.portfolio-item__tech-list.container-flex
+												each tech in item.technologies
+													li.portfolio-item__tech-list-item= tech
+
+			section.main-section#contacts
+				.content
+					h2.main-section__heading= mainSections[4].ru
+					.container-flex.container-flex_sb
+						.container
+							ul.contacts__list
+								each item in contacts
+									li.contacts__list-item
+										h3.contacts__heading= item.contact 
+										a.contacts__link(href=`${item.link}`)= item.text
+							p.text или напишите мне сообщение здесь &rarr;
+
+						.container
+							form#contacts-form.contacts__form.container-flex.container-flex_col
+								.container-flex.container-flex_sb
+									input.contacts__input.contacts__input_in-row(
+										type="text"
+										placeholder="Имя"
+										name="name"
+									)
+									input.contacts__input.contacts__input_in-row(
+										type="text"
+										name="contact"
+										placeholder="Почта или телефон"
+									)
+								textarea.contacts__input.contacts__textarea(
+									name="message"
+									placeholder="Сообщение"
+								)
+								.container-flex
+									button.btn.contacts__btn.inactive(type="submit" disabled="true") Отправить
+							
+							p.contacts__msg.container-flex.container-flex_center.hidden 
+						
+		footer.footer
+			ul.footer__list
+				each link in footer
+					li.footer__list-item
+						a.btn.footer__btn(href=`${link.link}`)= link.to

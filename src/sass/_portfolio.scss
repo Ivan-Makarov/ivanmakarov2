@@ -1,0 +1,41 @@
+$gutter_portfolio: 30px;
+
+.portfolio-list {
+	margin-left: -$gutter_portfolio;
+	flex-wrap: wrap;
+	&__item {
+		width: 25%;
+		padding-left: $gutter_portfolio;
+		margin-bottom: $gutter_portfolio;
+	}
+}
+
+.portfolio-item {
+	padding: 10px;
+	height: 100%;
+	border: 2px solid $orange;
+	background-color: #112;
+	box-shadow: 0 0 40px black;
+	&__heading {
+		font-family: $mono;
+		color: $cyan;
+		margin-bottom: 7px;
+	}
+	&__tech-list {
+		flex-wrap: wrap;
+	}
+	&__tech-list-item {
+		margin-right: 5px;
+		margin-bottom: 5px;
+		font-size: 12px;
+		padding: 1px 6px;
+		background-color: $cyan;
+		color: $darkgray;
+	}
+	&__link {
+		margin-bottom: 15px;
+		&:not(:first-of-type) {
+			margin-left: 15px;
+		}
+	}
+}

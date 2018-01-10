@@ -1,0 +1,57 @@
+$gutter_cv: 30px;
+
+.cv {
+	margin-top: 20px;
+	&__heading {
+		font-family: $mono;
+		text-transform: lowercase;
+		color: $green;
+		margin-bottom: 15px;
+		&:before {
+			content: '\21E5';
+			margin-right: 7px;
+		}
+	}
+	&__list {
+		flex-wrap: wrap;
+		margin-left: -$gutter_cv;
+	}
+	&__list-item {
+		width: 33.3%;
+		padding-left: $gutter_cv;
+		margin-bottom: $gutter_cv;
+	}
+}
+
+.cv-article {
+	height: 100%;
+	padding: 10px;
+	background-color: #112;
+	box-shadow: 0 0 40px black;
+	&__heading {
+		font-family: $mono;
+		color: $cyan;
+		margin-bottom: 5px;
+	}
+	&__details {
+		font-size: 12px;
+	}
+	&__link {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&__list-item {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+}
+
+.ed-item {
+	border: 2px solid $green;
+}
+
+.exp-item {
+	border: 2px solid $cyan;
+}

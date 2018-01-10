@@ -1,0 +1,35 @@
+$gutter_skills: 50px;
+
+.skills-list {
+	flex-wrap: wrap;
+	margin-left: -$gutter_skills;
+	&__item {
+		width: 25%;
+		margin-bottom: 30px;
+		padding-left: $gutter_skills;
+	}
+}
+
+.skill {
+	&__title {
+		font-family: 'PT Mono', monospace;
+		color: $cyan;
+	}
+}
+
+.skill-bar {
+	position: relative;
+	width: 100%;
+	height: 20px;
+	margin: 5px 0 7px;
+	background: linear-gradient(to right, tomato, $orange 12%, yellow 35%, $green);
+	border: 2px solid $green;
+	box-shadow: 0 0 30px black;
+	&__rate {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		background-color: #112;
+	}
+}

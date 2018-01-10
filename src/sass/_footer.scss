@@ -1,0 +1,13 @@
+.footer {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	&__list {
+		text-align: center;
+	}
+	&__list-item {
+		display: inline-block;
+		&:not(:first-of-type) {
+			margin-left: 10px;
+		}
+	}
+}
