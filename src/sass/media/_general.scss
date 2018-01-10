@@ -1,0 +1,17 @@
+@media screen and (max-width: 1150px) {
+	.content {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.about {
+		&__container {
+			flex-direction: column-reverse;
+		}
+	}
+	.my-photo {
+		align-self: center;
+		margin-bottom: 20px;
+	}
+}

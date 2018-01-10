@@ -1,0 +1,54 @@
+@media screen and (max-width: 900px) {
+	.header {
+		&__content {
+			position: relative;
+		}
+	}
+	
+	.nav {
+		display: none;
+		position: absolute;
+		top: 28px;
+		left: auto;
+		right: 0;
+		padding-top: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		border-top: 2px solid #112;
+		border-left: 2px solid $cyan;
+		border-right: 2px solid $cyan;
+		border-bottom: 2px solid $cyan;
+		background-color: #112;
+		&__list {
+			flex-direction: column;
+		}
+		&__list-item {
+			margin-left: 0;
+			margin-bottom: 5px;
+		}
+		&__link {
+			padding: 7px;
+		}
+	}
+
+	.nav-btn {
+		display: block;
+		position: relative;
+		left: 5px;
+		align-self: center;
+		color: $orange;
+		font-size: 27px;
+		line-height: 1;
+		padding: 0 5px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.page-heading {
+		align-self: center;
+		font-size: 12px;
+	}	
+}

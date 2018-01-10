@@ -1,0 +1,18 @@
+@media screen and (max-width: 650px) {
+	.cv {
+		&__list-item {
+			width: 50%;
+		}
+	}	
+}
+
+@media screen and (max-width: 450px) {
+	.cv {
+		&__list-item {
+			width: 100%;
+		}
+	}	
+}
+
+
+

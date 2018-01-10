@@ -1,4 +1,4 @@
-$header_bg_col: $darkgray;
+$header_bg_col: #112;
 //$header_col: white;
 $header_bor_col: $cyan;
 
@@ -6,8 +6,8 @@ $header_bor_col: $cyan;
 	position: fixed;
 	left: 0;
 	top: 0;
+	height: 30px;
 	width: 100%;
-	padding: 3px 0;
 	border-bottom: 2px solid $header_bor_col;
 	background-color: $header_bg_col;
 	//color: $header_col;
@@ -53,10 +53,15 @@ $nav_link_x_pad: 4px;
 	}
 }
 
+.nav-btn {
+	display: none;
+}
+
 $page_heading_col: $green;
 
 .page-heading {
 	color: $page_heading_col;
+	padding: 5px 0;
 }
 
 

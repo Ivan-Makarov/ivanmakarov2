@@ -6,6 +6,9 @@ $form_width: $content_width/2 - 15px;
 		color: $cyan;
 		font-family: $mono;
 	}
+	&__links {
+		margin-right: 30px;
+	}
 	&__list-item {
 		margin-bottom: 7px;
 		&:last-of-type {
@@ -119,6 +122,11 @@ $form_width: $content_width/2 - 15px;
 		&.err {
 			border: 2px solid tomato;
 			color: tomato;
+		}
+	}
+	&__text {
+		&::after {
+			content: "\2192"
 		}
 	}
 }
