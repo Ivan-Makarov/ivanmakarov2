@@ -1,7 +1,14 @@
-function runNavBtn() {
+function runNav() {
 	const nav = document.querySelector('.nav');
 	const btn = document.querySelector('.nav-btn');
-
+	const linkKeys = {
+		KeyJ: "#about",
+		KeyY: "#skills",
+		KeyH: "#cv",
+		KeyG: "#portfolio",
+		KeyR: "#contacts"
+	}
+	
 	function runBtn(e) {
 		const clicked = e.target;
 		if (clicked == btn) {
@@ -29,7 +36,16 @@ function runNavBtn() {
 		}
 	}
 
+	function scrollToKey(e) {
+		if (isIn(Object.keys(linkKeys), e.code)) {
+			$.scrollTo(linkKeys[e.code], 500, {
+				offset: -25
+			})
+		};
+	}
+
 	document.addEventListener('click', runBtn)
+	document.addEventListener('keydown', scrollToKey)
 }
 
-document.addEventListener('DOMContentLoaded', runNavBtn)
+document.addEventListener('DOMContentLoaded', runNav)

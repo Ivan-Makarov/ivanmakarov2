@@ -82,19 +82,7 @@ function handleForm() {
 
 		function formReady() {
 			return inputsCount === validInputs.length
-		}
-
-		function isIn(arr, item) {
-			return arr.find(el => {
-				return el == item
-			})
-		}
-
-		function rmFrom(arr, item) {
-			arr.splice(arr.findIndex(el => {
-				return el == item
-			}), 1)
-		}
+		}		
 	}
 	
 	function checkSubmit(form, btn, ready) {
