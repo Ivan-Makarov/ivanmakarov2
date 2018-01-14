@@ -38,9 +38,11 @@ function runNav() {
 
 	function scrollToKey(e) {
 		if (isIn(Object.keys(linkKeys), e.code)) {
-			$.scrollTo(linkKeys[e.code], 500, {
-				offset: -25
-			})
+			if (document.activeElement == document.querySelector('body')) {
+				$.scrollTo(linkKeys[e.code], 500, {
+					offset: -25
+				})
+			}
 		};
 	}
 

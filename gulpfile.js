@@ -93,7 +93,7 @@ gulp.task('img', () => {
 
 gulp.task('sync', () => {
     browsersync.init({
-        proxy: 'pug',
+        proxy: 'ivanmakarov',
         open: false,
         // browser: ['chrome', 'firefox'],
         notify: false

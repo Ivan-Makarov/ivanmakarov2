@@ -7,7 +7,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 100vh;
-	background-color: $darkgray;
+	//background-color: $darkgray;
 	color: white;
 }
 
@@ -87,6 +87,18 @@ $main_section_h_col: $orange;
 	&__img {
 		height: auto;
 		width: 100%;
+		&.animated {
+			animation: myphoto 2s ease-out;
+		}
+	}
+}
+
+@keyframes myphoto {
+	from {
+		filter: saturate(0) blur(30px)
+	}
+	to {
+		filter: saturate(100%) blur(0)
 	}
 }
 
@@ -136,4 +148,14 @@ $main_section_h_col: $orange;
 
 .no-wrap {
 	white-space: nowrap;
+}
+
+.bg-main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: -1;
+	background: linear-gradient(to bottom, $darkgray, lighten($darkgray, 10%))
 }

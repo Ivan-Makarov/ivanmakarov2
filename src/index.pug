@@ -10,6 +10,7 @@ html(lang="ru")
 		script(src="/js/jquery.scrollTo.min.js")
 		script(src="/js/main.min.js" defer)
 	body.body
+		.bg-main
 		header.header
 			.content.container-flex.container-flex_sb.header__content
 				h1.page-heading 
@@ -44,7 +45,8 @@ html(lang="ru")
 									h3.skill__title= skill.title
 									.skill-bar
 										.skill-bar__rate(
-											style=`width: ${100 - skill.level}%;`
+											data-skill=`${100 - skill.level}`
+											style='width: 100%;'
 										)
 									p.text !{skill.description.ru}
 					.container-flex.container-flex_center
